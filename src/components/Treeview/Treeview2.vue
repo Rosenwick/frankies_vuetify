@@ -7,9 +7,11 @@
           :icon="item.expanded ? openClass : iconClass"
           @click="toggleNode(item)"
         ></v-icon>
+        <div v-else style="width: 24px"></div>
 
         <v-checkbox
           class="d-inline-block"
+          color="primary"
           :model-value="item.checked"
           :indeterminate="item.indeterminate"
           density="compact"
@@ -125,58 +127,9 @@ export default {
 </script>
 
 <style scoped>
-.toggle-icon {
-  cursor: pointer;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  user-select: none;
-}
-
-.toggle-icon::before {
-  content: '▶';
-  transition: transform 0.2s ease;
-}
-
-.toggle-icon.open::before {
-  content: '▼';
-}
-
 .tree {
   list-style: none;
   padding-left: 20px;
   margin: 0;
-}
-
-.tree > li {
-  margin: 4px 0;
-}
-
-.tree > li > span > ul {
-  list-style: none;
-}
-
-.form-check-label {
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Indeterminate Checkbox Styling */
-input[type='checkbox']:indeterminate {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-input[type='checkbox']:indeterminate::after {
-  content: '';
-  display: block;
-  width: 10px;
-  height: 2px;
-  background: white;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 </style>

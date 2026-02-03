@@ -1,8 +1,14 @@
 <template>
   <v-app>
     <AppNavbar />
-    <v-main class="pa-6">
-      <router-view />
+    <v-main>
+      <v-container>
+        <v-row>
+          <v-col>
+            <router-view />
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
