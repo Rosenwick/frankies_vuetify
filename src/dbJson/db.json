@@ -1,0 +1,51 @@
+{
+  "treeNodes": [
+    {
+      "id": "1",
+      "name": "Root Node 1 Frank23",
+      "checked": false,
+      "indeterminate": false,
+      "expanded": false,
+      "parentId": null,
+      "children": [
+        {
+          "id": 2,
+          "name": "Child 1.1",
+          "checked": false,
+          "indeterminate": false,
+          "expanded": false,
+          "parentId": 1,
+          "children": [
+            {
+              "id": 3,
+              "name": "Child 1.1.1",
+              "checked": false,
+              "indeterminate": false,
+              "expanded": false,
+              "parentId": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Child 1.2",
+          "checked": false,
+          "indeterminate": false,
+          "expanded": false,
+          "parentId": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Root Node 2",
+      "checked": false,
+      "indeterminate": false,
+      "expanded": false,
+      "parentId": null,
+      "children": []
+    }
+  ]
+}
