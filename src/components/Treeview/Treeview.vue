@@ -21,7 +21,11 @@
         />
       </div>
       <ul v-if="item.expanded && item.children" class="ml-1">
-        <tree-node :myData="item.children" @update="onChildUpdate"></tree-node>
+        <tree-node
+          :myData="item.children"
+          :allChecked="allChecked"
+          @update="onChildUpdate"
+        ></tree-node>
       </ul>
     </li>
   </ul>
@@ -34,6 +38,10 @@ export default {
     myData: {
       type: Array,
       required: true,
+    },
+    allChecked: {
+      type: Boolean,
+      default: null,
     },
   },
   data() {
@@ -50,6 +58,12 @@ export default {
 
     onCheckChange(node, value) {
       this.setNodeChecked(node, value)
+
+      // Wenn gecheckt und hat Kinder, dann öffnen
+      if (value && node.children && node.children.length > 0) {
+        node.expanded = true
+      }
+
       this.updateAllParents()
       this.$emit('update')
     },
@@ -118,10 +132,28 @@ export default {
         item.children.forEach((child) => this.initializeNode(child))
       }
     },
+
+    // Alle Nodes auf einmal setzen
+    setAllChecked(checked) {
+      this.myData.forEach((item) => this.setNodeChecked(item, checked))
+    },
+  },
+
+  watch: {
+    allChecked(newVal) {
+      if (newVal !== null) {
+        this.setAllChecked(newVal)
+      }
+    },
   },
 
   created() {
     this.myData.forEach((item) => this.initializeNode(item))
+
+    // Initial-Wert setzen, falls vorhanden
+    if (this.allChecked !== null) {
+      this.setAllChecked(this.allChecked)
+    }
   },
 }
 </script>
