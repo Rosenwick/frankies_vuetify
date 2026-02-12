@@ -17,7 +17,7 @@
 
               <v-list>
                 <v-list-item title="Treeview" to="/projekte/treeview" />
-                <v-list-item title="Drag and Drop" to="/projekte/drag-drop" />
+                <v-list-item title="Transfer List" to="/projekte/transfer-list" />
               </v-list>
             </v-menu>
 

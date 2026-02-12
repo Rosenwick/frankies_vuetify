@@ -104,6 +104,7 @@
 
 <script>
 export default {
+  name: 'TransferList',
   data() {
     return {
       basicList: [],
