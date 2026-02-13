@@ -2,16 +2,7 @@
   <v-container>
     <v-row justify="center" class="text-center">
       <v-col cols="12">
-        <h2 class="mb-2">Objekte einfügen/entfernen per Klick</h2>
-      </v-col>
-      <v-col cols="12">
-        <router-link to="/ItemDragAndDrop" class="text-primary">
-          Objekte einfügen/entfernen per Drag & Drop
-        </router-link>
-        <span class="mx-2">|</span>
-        <router-link to="/RemoveAndInsert" class="text-primary">
-          Klick & Move Elemente
-        </router-link>
+        <h2 class="mb-2">Transfer List</h2>
       </v-col>
     </v-row>
 
